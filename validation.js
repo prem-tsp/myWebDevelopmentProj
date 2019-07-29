@@ -18,81 +18,6 @@ function checkUserName()
 
 }
 
-function checkEmail()
-{
-	var em = document.getElementById("email").value;
-	
-	var at=0,countdot=0,spl=0,blank=0,countdot1=0,pos=0;
-	for(let i = 1; i < em.length ; i++)
-	{
-		let c= em.charAt(i);
-		if(c == '@')
-		{
-			at++;
-			 pos = i; 
-		}
-		else if(isSplCharNew(c))
-		{
-			spl++;
-		}
-		else if(c==" ")
-		{
-			blank++;
-		}
-		
-	}
-	
-		for(let i =pos+1 ; i < em.length ; i++ )
-		{
-			if(c == ".")
-			{
-			countdot++;
-			}
-		}
-	
-	if(at==1 && spl==0 && blank==0 && countdot>=1 && countdot<3)
-	{
-		
-		let check = em.indexOf(".");
-		let check1 = em.lastIndexOf(".");
-		if(check1 == check)
-		{
-		for(let j= check+1 ; j<em.length ; j++)
-		{
-			countdot1++;
-		}
-		if(countdot1==2 || countdot1==3)
-			send="Valid E-mail";
-		else 
-			send="Invalid E-mail";
-		}
-		else 
-		{
-			for(let j= check+1 ; j<em.length ; j++)
-			{
-			countdot1++;
-			}
-			if(countdot1!=2 || countdot1!=3)
-				send="Invalid E-mail";
-			else 
-				{
-					coundot1=0;
-					for(let j= check+1 ; j<em.length ; j++)
-					{
-						countdot1++;
-					}
-				if(countdot1==2 || countdot1==3)
-					send="Valid E-mail";
-				else 
-					send="Invalid E-mail";
-				}
-		} 
-		
-	}
-	else send="Invalid E-mail";
-
-	document.getElementById("checkemail").innerHTML=send;
-}
 function checkPassword()
 {
 	var pw = document.getElementById("passw").value;
@@ -104,7 +29,7 @@ function checkPassword()
 		result1 = "Password should be atleast 10 characters";
 	else
 	{	
-		for(let i=0; i<pw.length ;i++)
+		for(let i=0; i<pw.length ; i++)
 		{
 			let ch = pw.charAt(i);  
 			if(isUpper(ch) && flag[0]==0)
@@ -134,6 +59,7 @@ function checkPassword()
 //	checkConfirmPassword(result1);
 	//document.getElementById("checkconfirmpass").innerHTML = send;
 }
+
 function isUpper(ch)
 {
 	if(ch>='A' && ch<'Z')
