@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="style_validation.css">
+</head>
+<div id = "container">
+<body>
+
+<h2 style="font-size:2vw">User Input Validation</h2>
+<input id="uname" placeholder="Enter User Name(eg. Johnny007)" class = "textBox"
+style="font-size:1vw">
+
+<button type="button" onclick="checkUserName()" id="but1">CHECK</button>
+
+<p id="checkuname" class="para"> </p>
+
+
+<input type="password" id="passw" placeholder="Enter Password" class = "textBox" style="font-size:1vw">
+
+<button type="button" onclick="checkPassword()" id="but2">CHECK</button>
+
+<p id="checkpass" class="para"></p>
+
+<!--1Confirm Password:<input type="password" id="confpassw">
+
+<button type="button" onclick="checkPassword()" id="but2">check</button>
+
+<p id="checkconfirmpass"></p>
+-->
+
+<input id = "email" placeholder="Enter E-mail(eg. abc@gmail.com)" class= "textBox" autocomplete="on" style="font-size:1vw">
+
+<button type = "button" onclick = "checkEmail()">CHECK</button>
+
+<p id="checkemail" class="para"></p>
+
+
+<script src="validation.js" type="text/JavaScript">
+</script>
+
+
+<script src="EMailValidation.js" type="text/JavaScript">
+</script>
+
+</body>
+</div>
+</html> 
